@@ -23,7 +23,7 @@ class ChangingNeedsTest(unittest.TestCase):
 
         self.assertTrue(tamagotchi.is_hungrier_than(self.base_tamagotchi()))
 
-    def test_its_happiness_over_time(self):
+    def test_its_happiness_decreases_over_time(self):
         tamagotchi = self.base_tamagotchi()
 
         self.time_passes()
