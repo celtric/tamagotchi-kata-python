@@ -1,6 +1,7 @@
 import unittest
 
 from src.tamagotchi import *
+from tests.acceptance.utils import NullClock
 
 
 class PlayingTest(unittest.TestCase):
@@ -20,4 +21,4 @@ class PlayingTest(unittest.TestCase):
     # ---[ Helpers ]-------------------------------------------------------------------- #
 
     def bored_tamagotchi(self):
-        return Tamagotchi()
+        return Tamagotchi(NullClock())

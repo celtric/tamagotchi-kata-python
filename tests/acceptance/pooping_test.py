@@ -1,6 +1,7 @@
 import unittest
 
 from src.tamagotchi import *
+from tests.acceptance.utils import NullClock
 
 
 class PoopingTest(unittest.TestCase):
@@ -14,4 +15,4 @@ class PoopingTest(unittest.TestCase):
     # ---[ Helpers ]-------------------------------------------------------------------- #
 
     def full_tamagotchi(self):
-        return Tamagotchi()
+        return Tamagotchi(NullClock())

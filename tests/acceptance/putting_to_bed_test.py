@@ -1,6 +1,7 @@
 import unittest
 
 from src.tamagotchi import *
+from tests.acceptance.utils import NullClock
 
 
 class PuttingToBedTest(unittest.TestCase):
@@ -14,4 +15,4 @@ class PuttingToBedTest(unittest.TestCase):
     # ---[ Helpers ]-------------------------------------------------------------------- #
 
     def tired_tamagotchi(self):
-        return Tamagotchi()
+        return Tamagotchi(NullClock())

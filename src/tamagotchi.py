@@ -1,10 +1,14 @@
 class Tamagotchi:
 
-    def __init__(self):
+    def __init__(self, clock):
+        self.clock = clock
         self.fullness = 0
         self.happiness = 0
         self.hungriness = 0
         self.tiredness = 0
+
+    def start(self):
+        self.clock.on_time_pass(lambda: self.time_passed())
 
     def feed(self):
         self.hungriness -= 1
@@ -26,8 +30,22 @@ class Tamagotchi:
     def is_fuller_than(self, another_tamagotchi) -> bool:
         return self.fullness > another_tamagotchi.fullness
 
-    def is_happier_than(self, another_tamagotchi):
+    def is_happier_than(self, another_tamagotchi) -> bool:
         return self.happiness > another_tamagotchi.happiness
 
-    def is_more_tired_than(self, another_tamagotchi):
+    def is_more_tired_than(self, another_tamagotchi) -> bool:
         return self.tiredness > another_tamagotchi.tiredness
+
+    def time_passed(self):
+        self.tiredness += 1
+        self.hungriness += 1
+        self.happiness -= 1
+
+
+class Clock:
+
+    def __init__(self):
+        self.callbacks = []
+
+    def on_time_pass(self, callback):
+        self.callbacks.append(callback)

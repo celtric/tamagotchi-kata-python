@@ -1,6 +1,7 @@
 import unittest
 
 from src.tamagotchi import *
+from tests.acceptance.utils import NullClock
 
 
 class FeedingTest(unittest.TestCase):
@@ -20,4 +21,4 @@ class FeedingTest(unittest.TestCase):
     # ---[ Helpers ]-------------------------------------------------------------------- #
 
     def hungry_tamagotchi(self):
-        return Tamagotchi()
+        return Tamagotchi(NullClock())
