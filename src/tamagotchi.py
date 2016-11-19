@@ -14,6 +14,9 @@ class Tamagotchi:
         self.happiness += 1
         self.tiredness += 1
 
+    def put_to_bed(self):
+        self.tiredness -= 1
+
     def is_hungrier_than(self, another_tamagotchi) -> bool:
         return self.hungriness > another_tamagotchi.hungriness
 
