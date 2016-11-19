@@ -24,16 +24,16 @@ class Tamagotchi:
     def make_poop(self):
         self.fullness -= 1
 
-    def is_hungrier_than(self, another_tamagotchi) -> bool:
+    def is_hungrier_than(self, another_tamagotchi):
         return self.hungriness > another_tamagotchi.hungriness
 
-    def is_fuller_than(self, another_tamagotchi) -> bool:
+    def is_fuller_than(self, another_tamagotchi):
         return self.fullness > another_tamagotchi.fullness
 
-    def is_happier_than(self, another_tamagotchi) -> bool:
+    def is_happier_than(self, another_tamagotchi):
         return self.happiness > another_tamagotchi.happiness
 
-    def is_more_tired_than(self, another_tamagotchi) -> bool:
+    def is_more_tired_than(self, another_tamagotchi):
         return self.tiredness > another_tamagotchi.tiredness
 
     def time_passed(self):
